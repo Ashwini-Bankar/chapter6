@@ -1,0 +1,24 @@
+6.1 If the system uses a shadow file and we need to obtain the encrypted password, how do we do so?
+
+ANS:
+	The encrypted password is a copy of the user’s password that has been put through a one-way encryption algorithm. Because this algorithm is one-way, we can’t guess the original password from the encrypted version.
+
+	Given an encrypted password, we can’t apply an algorithm that inverts it and returns the plaintext password.
+
+	But we could guess a password, run it through the one-way algorithm, and compare the result to the encrypted password.
+	
+	To make it more difficult to obtain the raw materials (the encrypted passwords), systems now store the encrypted password in another file, often called the shadow password file. Minimally, this file has to contain the user name and the encrypted password.
+
+
+	Following are the steps using than we will findout the encrypted password
+
+	1. su [user name]   eg. su ashwini
+	2. password: [Enter your password]
+	3. cat /etc/shadow   
+	4. above command display the message as /etc/shadow : Permission denied
+	5. sudo cat /etc/shadow
+	6. enter password
+	7. It will print all details of shadow file. eg user name, password, modified date, last password change date....etc.
+
+
+
